@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Art Exposition/title</title>
+        <link rel="stylesheet" href="hm2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="toolbar">
+            <a href="Painters/painters.html" class="toolbar-link">Paintings</a>
+            <a href="AboutUs/AboutUs.html" class="toolbar-link">About us</a>
+        </div>
+        <div class="image-container">
+          <img src="Painters/Artists/ClaudeMonet/ImpressionSoleilant/file77ongzhiam17hsj6p32.jpg" alt="Image 1">
+          <img src="Painters/Artists/LenoardodaVinci/Thelastsupper/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg" alt="Image 2">
+          <img src="Painters/Artists/RaffaelloSanzio/DisputationoftheMostHolySacrament/Disputa_del_Sacramento_(Rafael).jpg" alt="Image 3">
+          <img src="Painters/Artists/SalvadorDali/THEPERSISTENCEOFMEMORY/3b1ee1f98ef246f3855680594767ffbe.jpeg" alt="Image 4">
+          <img src="Painters/Artists/VincentvanGogh/AlmondBlossoms/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg" alt="Image 5">
+          <img src="Painters/Artists/VincentvanGogh/TheStarryNight/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="Image 6">
+          <div class="overlay"></div>
+          <div class="message-box">
+            <p>Welcome to our Online art Exposition</p>
+            <button id="scroll-button">Scroll Down</button>
+            <div id="section-to-scroll-to"></div>
+          </div>
+        </div>
+        <h1>Welcome!
+
+          We're so glad you're here. Our goal is to provide you with the best possible experience, and we hope you find everything you're looking for. If you have any questions or need assistance, please don't hesitate to reach out.
+
+          Here you are going to find and some original PAINTINGS.<br>
+          
+          Thank you for choosing us, and we hope you enjoy your visit!<h1>
+        <script>
+          const images = document.querySelectorAll('.image-container img');
+         let index = 0;
+
+        setInterval(() => {
+           images[index].style.opacity = 0;
+          index = (index + 1) % images.length;
+            images[index].style.opacity = 1;
+        }, 3000);
+
+        document.getElementById("scroll-button").addEventListener("click", function() {
+        window.scrollBy({
+         top: 6000,
+         behavior: "smooth"
+          });
+        });
+        </script>
+    </body>
+</html>

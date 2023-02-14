@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+    --index: calc(1vw + 1vh);
+    --gutter: 30px;
+    --size-small:29;
+    --size-big:38;
+    --depth:4900px;
+    --transition: .75s cubic-bezier(.075, .5, 0, 1)
+}
+@font-face {
+    font-family: raleway;
+    src: url(../OAE/Fonts/Raleway-VariableFont_wght.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: quicksand;
+    src: url(../Fonts/Quicksand-VariableFont_wght.ttf);
+    font-weight: 200;
+    
+}
+body{
+    background-color: #181818;
+    color:aliceblue;
+    font-size: calc(var(--index) * 2);
+    font-family: raleway, sans-serif;
+    line-height: 1.75;
+    height: var(--depth);
+    font-weight: 200;
+}
+body::-webkit-scrollbar{
+    width: 0.275em;
+}
+body::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #1E1E1E;
+    outline: 1px solid rgb(50, 61, 72);
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    perspective: 1500px;
+}
+.gallery{
+    transform-style: preserve-3d;
+    height:100%;
+}
+.frame{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition),opacity .75s ease;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+h1, h2 ,h3,h4 {
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.frame h2{
+    text-align: center;
+    font-size: calc(var(--index) * 3.5);
+    width: min-content;
+}
+.frame-media{
+    position:relative;
+    width:calc(var(--index) * var(--size-small));
+    height:calc(var(--index) * var(--size-big));
+    background-position: center;
+    background-size: cover;
+}
+.frame-media1{
+    position:relative;
+    width:calc(var(--index) * var(--size-big));
+    height:calc(var(--index) * var(--size-small));
+    background-position: center;
+    background-size: cover;
+}
+.frame-media_left{
+    left:calc(var(--size-small)/2 * var(--index) + var(--gutter));
+}
+.frame-media_right{
+    right:calc(var(--size-small)/2 * var(--index) + var(--gutter));
+}
+.frame_bg{
+    background-color: rgb(24 24 24 / .9);
+}
+
+.frame_text{
+    position:relative;
+    text-align:center;
+    font-size: calc(var(--index) * 2);
+}
+.frame-text_right{
+    right:calc(var(--size-big)/2 * var(--index) + var(--gutter));
+}
+.frame-text_left{
+    left:calc(var(--size-big)/2 * var(--index) + var(--gutter));
+}
+
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #A09696;
+    background-color: transparent;
+    text-decoration: none;
+  }
